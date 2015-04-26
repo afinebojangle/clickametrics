@@ -6,6 +6,8 @@ class WebsitesController < ApplicationController
   end
 
   def show
+    @website = Website.find(params[:id])
+    @events = @website.events.group_by(&:name)
   end
 
   def new

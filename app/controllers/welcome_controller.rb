@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
     if current_user
      redirect_to websites_path
     else
-      render home
+      render :home
     end        
   end
 end
