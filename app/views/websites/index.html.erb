@@ -1,0 +1,6 @@
+<h1>Your Websites</h1>
+
+<h3><%= link_to "Track a new website", new_website_path %></h3>
+<% @websites.each do |website| %>
+  <p><%= link_to website.url, website_path(website.id) %> <small><%= link_to "Delete", website_path(website.id), method: :delete %></small>
+<% end %>
