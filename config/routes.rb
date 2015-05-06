@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   root to: "welcome#home"
 
   namespace :api, defaults: { format: :json } do
-    resources :events, only [:create]
+    resources :events, only: [:create]
   end
 end
