@@ -1,5 +1,4 @@
 <h1>Events for <%= "#{@website.url}" %></h1>
-<%= @events.inspect %>
 <% @events.each do |name, eventlist| %>
   <%= "Your website had had #{eventlist.count} #{name}" %>
 <% end %>

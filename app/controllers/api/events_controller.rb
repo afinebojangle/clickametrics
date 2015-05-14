@@ -7,7 +7,7 @@ class API::EventsController < ApplicationController
     if @website.nil?
       render json: "Unregistered Application", status: :unprocessable_entity
     else
-      @event = @website.event.build(event_params)
+      @event = @website.events.build(event_params)
         if @event.save
           render json: @event, status: :created
         else
@@ -19,6 +19,6 @@ class API::EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:name)
+    params.permit(:name)
   end
 end
