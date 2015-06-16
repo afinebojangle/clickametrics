@@ -1,5 +1,7 @@
 <h1>Events for <%= "#{@website.url}" %></h1>
+<%= pie_chart @website.events.group(:name).count %>
 <% @events.each do |name, eventlist| %>
   <%= "Your website had had #{eventlist.count} #{name}" %>
 <% end %>
+<%= line_chart @website.events.data_for_chart %>
 
